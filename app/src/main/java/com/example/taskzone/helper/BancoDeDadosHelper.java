@@ -14,7 +14,7 @@ public class BancoDeDadosHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Criação da tabela de usuários
+        
         String criarTabelaUsuario = "CREATE TABLE usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT, sobrenome TEXT, email TEXT, senha TEXT)";
         db.execSQL(criarTabelaUsuario);
@@ -22,7 +22,7 @@ public class BancoDeDadosHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Atualização do banco de dados
+        
         db.execSQL("DROP TABLE IF EXISTS usuarios");
         onCreate(db);
     }
